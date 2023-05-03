@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 8</title>
+<style>
+    body {
+        background-color: rgb(194, 188, 188);
+        color: azure;
+        font: normal 20pt Arial;
+        }
+        h1{
+            color: rgb(16, 22, 104);
+        }
+        h2{
+            color: rgb(3, 0, 0);
+            font: normal 18pt Arial;
+        }
+</style>
+</head>
+<body>
+    <h1>Exercício 8</h1>
+    <h2 class="k1">Nome:Pablo Camelo de Andrade<br>
+    Turma: OADSNM1AC</h2> 
+    <br>
+    <label for="cotacao_dolar">Cotação do dólar:</label>
+    <input type="text" id="cotacao_dolar">
+    <br>
+    <label for="quantidade_dolares">Quantidade de dólar:</label>
+    <input type="text" id="quantidade_dolares">
+    <br>
+    <button onclick="converter()">Converter para reais</button>
+    <br>
+    <p id="resultado"></p>
+    
+    <script>
+        function converter() {
+            var cotacao_dolar = Number.parseFloat(document.getElementById("cotacao_dolar").value);
+            var quantidade_dolares = Number.parseFloat(document.getElementById("quantidade_dolares").value);
+            
+            var Valor_em_reais = quantidade_dolares * cotacao_dolar;
+
+            document.getElementById("resultado").innerHTML = "O valor em reais é R$ " + Valor_em_reais.toFixed(2);
+        }
+    </script>
+</body>
+</html>

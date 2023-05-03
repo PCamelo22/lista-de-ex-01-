@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 17</title>
+<style>
+    body {
+        background-color: rgb(194, 188, 188);
+        color: azure;
+        font: normal 20pt Arial;
+        }
+        h1{
+            color: rgb(16, 22, 104);
+        }
+        h2{
+            color: rgb(3, 0, 0);
+            font: normal 18pt Arial;
+        }
+</style>
+</head>
+<body>
+    <h1>Exercício 17</h1>
+    <h2 class="k1">Nome:Pablo Camelo de Andrade<br>
+    Turma: OADSNM1AC</h2> 
+    <br>
+    <label for="numeros">Digite os números (separados por espaços):</label>
+    <input type="text" id="numeros" name="numeros">          
+    <br>
+    <input type="button" value="Contar" onclick="contarNumeros()">
+    <br><br>
+     <label for="resultado">Quantidade de números no intervalo:</label>
+     <br>
+     <p id="resultado"></p>
+            
+    <script>
+
+        function contarNumeros() {
+
+            var numeros = document.getElementById("numeros").value.split(" ");
+            var contador = 0;
+
+            for (var i = 0; i < numeros.length; i++) {
+            var numero = parseInt(numeros[i]);
+            if (numero >= 10 && numero <= 150) {
+             contador++;
+            }
+        }
+        document.getElementById("resultado").innerHTML = "Tem " + contador + " números no intervalo entre 10 e 150.";
+          }
+    </script>
+</body>
+</html>

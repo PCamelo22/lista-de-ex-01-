@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 2</title>
+<style>
+    body {
+        background-color: rgb(194, 188, 188);
+        color: azure;
+        font: normal 20pt Arial;
+        }
+        h1{
+            color: rgb(16, 22, 104);
+        }
+        h2{
+            color: rgb(3, 0, 0);
+            font: normal 18pt Arial;
+        }
+</style>
+</head>
+<body>
+    <h1>Exercício 2</h1>
+    <h2 class="k1">Nome:Pablo Camelo de Andrade<br>
+    Turma: OADSNM1AC</h2> 
+    <br>
+    <label for="n1">Digite o 1° número:</label>
+    <input type="number" id="n1">
+        
+    <br>
+
+    <label for="n2">Digite o 2° número:</label>
+    <input type="number" id="n2">
+        
+    <br>
+
+    <button onclick="calcular()">Calcular</button>
+    
+    <br>
+
+    <p id="soma"></p>
+    <p id="subtracao"></p>
+    <p id="multiplicacao"></p>
+    <p id="divisao"></p>
+
+    <script>
+        function calcular() {
+            var n1 = parseInt(document.getElementById("n1").value);
+            var n2 = parseInt(document.getElementById("n2").value);
+
+            var soma = n1 + n2;
+            var subtracao = n1 - n2;
+            var multiplicacao = n1 * n2;
+            var divisao = n1 / n2;
+
+            document.getElementById("soma").innerHTML = "A soma dos números é igual a " + soma;
+            document.getElementById("subtracao").innerHTML = "A subtração dos números é igual a " + subtracao;
+            document.getElementById("multiplicacao").innerHTML = "A multiplicação dos números é igual a " + multiplicacao;
+            document.getElementById("divisao").innerHTML = "A divisão dos números é igual a " + divisao;
+        }
+    </script>
+</body>
+</html>

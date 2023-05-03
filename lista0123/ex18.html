@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 18</title>
+<style>
+    body {
+        background-color: rgb(194, 188, 188);
+        color: azure;
+        font: normal 20pt Arial;
+        }
+        h1{
+            color: rgb(16, 22, 104);
+        }
+        h2{
+            color: rgb(3, 0, 0);
+            font: normal 18pt Arial;
+        }
+</style>
+</head>
+<body>
+    <h1>Exercício 18</h1>
+    <h2 class="k1">Nome:Pablo Camelo de Andrade<br>
+    Turma: OADSNM1AC</h2> 
+    <br>
+    <form>
+        <legend>Idade das pessoas:</legend>
+          <script>
+            for (var i = 1; i <= 75; i++) {
+            document.write(`<label for="idade${i}">Idade da pessoa ${i}:</label>
+            <input type="number" id="idade${i}"><br>`);
+            }
+          </script>
+  
+          <button type="button" onclick="resultadototal()">Verificar</button>
+      </form>
+  
+      <div id="resultado"></div>
+    
+      <script>
+          function resultadototal() {
+              for (var i = 1; i <= 75; i++) {
+                  var idade = parseInt(document.getElementById('idade' + i).value);
+                  var resultado = '';
+                  if (idade >= 18) {
+                      resultado = 'maior de idade';
+                  } else {
+                      resultado = 'menor de idade';
+                  }
+                  document.getElementById('resultado').innerHTML += 'A pessoa ' + i + ' é ' + resultado + '.<br>';
+              }
+          }
+      </script>
+  </body>
+  </html>

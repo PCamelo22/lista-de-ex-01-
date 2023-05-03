@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 20</title>
+<style>
+    body {
+        background-color: rgb(194, 188, 188);
+        color: azure;
+        font: normal 20pt Arial;
+        }
+        h1{
+            color: rgb(16, 22, 104);
+        }
+        h2{
+            color: rgb(3, 0, 0);
+            font: normal 18pt Arial;
+        }
+</style>
+</head>
+<body>
+    <h1>Exercício 20</h1>
+    <h2 class="k1">Nome:Pablo Camelo de Andrade<br>
+    Turma: OADSNM1AC</h2> 
+    <br>
+    <form>
+        <label for="ano">Ano do Veículo:</label>
+        <input type="number" id="ano" name="ano" required /><br /><br />
+  
+        <label for="preco">Preço do Veículo:</label>
+        <input type="number" id="preco" name="preco" step=".01" required /><br /><br />
+  
+        <button type="button" onclick="calcularDesconto()">Calcular Desconto</button>
+      </form>
+  
+      <h3>Resultado:</h3>
+      <p id="desconto"></p>
+      <p id="preco-final"></p>
+  
+      <h3>Totais:</h3>
+      <p id="total-ate-2000"></p>
+      <p id="total-geral"></p>
+  
+      <script>
+        var totalAte2000 = 0;
+        var totalGeral = 0;
+  
+        function calcularDesconto() {
+          var ano = parseInt(document.getElementById("ano").value);
+          var preco = parseFloat(document.getElementById("preco").value);
+  
+          var desconto = 0;
+  
+          if (ano <= 2000) {
+            desconto = preco * 0.12;
+            totalAte2000++;
+          } else {
+            desconto = preco * 0.07;
+          }
+  
+          var precoFinal = preco - desconto;
+  
+          document.getElementById("desconto").textContent = `Desconto: R$ ${desconto.toFixed(
+            2
+          )}`;
+          document.getElementById("preco-final").textContent = `Preço Final: R$ ${precoFinal.toFixed(
+            2
+          )}`;
+  
+          totalGeral++;
+          document.getElementById(
+            "total-ate-2000"
+          ).textContent = `Total dos veículos até 2000: ${totalAte2000}`;
+          document.getElementById(
+            "total-geral"
+          ).textContent = `Total de todos os veículos: ${totalGeral}`;
+  
+          var resposta = prompt("Deseja continuar calculando desconto? ((S)para sim /(N)para nao)");
+  
+          if (resposta == "S") {
+            document.getElementById("ano").value = "";
+            document.getElementById("preco").value = "";
+          } else {
+            document.querySelector("button").disabled = true;
+          }
+        }
+      </script>
+    </body>
+  </html>

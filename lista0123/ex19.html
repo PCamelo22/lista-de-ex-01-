@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 19</title>
+<style>
+    body {
+        background-color: rgb(194, 188, 188);
+        color: azure;
+        font: normal 20pt Arial;
+        }
+        h1{
+            color: rgb(16, 22, 104);
+        }
+        h2{
+            color: rgb(3, 0, 0);
+            font: normal 18pt Arial;
+        }
+</style>
+</head>
+<body>
+    <h1>Exercício 19</h1>
+    <h2 class="k1">Nome:Pablo Camelo de Andrade<br>
+    Turma: OADSNM1AC</h2> 
+    <br>
+    <form>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome">
+        
+        <br>
+    
+        <label for="sexo">Sexo:</label> <br>
+        <input type="radio" id="sexo-m" name="sexo" value="m">
+    
+        <label for="sexo-m">Masculino</label>
+    
+        <br>
+    
+        <input type="radio" id="sexo-f" name="sexo" value="f"> 
+        <label for="sexo-f">Feminino</label>
+        
+        <br>
+    
+        <button type="button" onclick="adicionarPessoa()">Adicionar</button>
+    
+      </form>
+    
+      <h3>Nome / gênero:</h3>
+      <ul id="pessoas"></ul>
+    
+      <br>
+    
+      <h3>Total de ♂ e ♀:</h3>
+      <p id="total-H"></p>
+      <p id="total-M"></p>
+    
+      <script>
+        var pessoas = [];
+        var totalH = 0;
+        var totalM = 0;
+    
+        function adicionarPessoa() {
+          var nome = document.getElementById("nome").value;
+          var sexo = document.querySelector('input[name="sexo"]:checked').value;
+    
+          var pessoa = {
+            nome: nome,
+            sexo: sexo
+          };
+    
+          pessoas.push(pessoa);
+    
+          var listaPessoas = document.getElementById("pessoas");
+          var itemLista = document.createElement("li");
+          itemLista.textContent = `${nome} (${sexo === "m" ? "Homem" : "Mulher"})`;
+          listaPessoas.appendChild(itemLista);
+    
+          if (sexo === "m") {
+            totalH++;
+            document.getElementById("total-H").textContent = `Total de Homens: ${totalH}`;
+          } else {
+            totalM++;
+            document.getElementById("total-M").textContent = `Total de Mulheres: ${totalM}`;
+          }
+        }
+          </script>
+    </body>
+    </html>

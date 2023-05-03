@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 7</title>
+<style>
+    body {
+        background-color: rgb(194, 188, 188);
+        color: azure;
+        font: normal 20pt Arial;
+        }
+        h1{
+            color: rgb(16, 22, 104);
+        }
+        h2{
+            color: rgb(3, 0, 0);
+            font: normal 18pt Arial;
+        }
+</style>
+</head>
+<body>
+    <h1>Exercício 7</h1>
+    <h2 class="k1">Nome:Pablo Camelo de Andrade<br>
+    Turma: OADSNM1AC</h2> 
+    <br>
+    <label for="C">Qual é a temperaturaem Celsius?</label>
+	<input type="text" id="C">
+    <br>
+	<button onclick="converter()">Converter para Fahrenheit</button>
+    <br> 
+	<p id="resultado"></p>
+	<script>
+		function converter() {
+			var C = Number(document.getElementById("C").value);
+			var F = (9 * C + 160) / 5;
+
+			document.getElementById("resultado").innerHTML = "A temperatura em Fahrenheit é: " + F.toFixed(2) + "°F";
+		}
+	</script>
+</body>
+</html>

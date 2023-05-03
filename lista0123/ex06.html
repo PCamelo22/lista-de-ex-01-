@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 6</title>
+<style>
+    body {
+        background-color: rgb(194, 188, 188);
+        color: azure;
+        font: normal 20pt Arial;
+        }
+        h1{
+            color: rgb(16, 22, 104);
+        }
+        h2{
+            color: rgb(3, 0, 0);
+            font: normal 18pt Arial;
+        }
+</style>
+</head>
+<body>
+    <h1>Exercício 6</h1>
+    <h2 class="k1">Nome:Pablo Camelo de Andrade<br>
+    Turma: OADSNM1AC</h2> 
+    <br>
+    <label for="varA">Variavel A:</label>
+	<input type="number" id="varA">
+    <br>
+	<label for="varB">Variavel B:</label>
+	<input type="number" id="varB">
+    <br>
+	<button onclick="trocarValores()">Inverter Valores</button>
+
+    <br>
+    
+	<p id="resultado"></p>
+	
+	<script>
+		function trocarValores() {
+			var varA = parseInt(document.getElementById("varA").value);
+			var varB = parseInt(document.getElementById("varB").value);
+			
+			var temp = varA;
+			varA = varB;
+			varB = temp;
+			
+			document.getElementById("resultado").innerHTML = "A: " + varA + "<br>" + "B: " + varB;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 11</title>
+<style>
+    body {
+        background-color: rgb(194, 188, 188);
+        color: azure;
+        font: normal 20pt Arial;
+        }
+        h1{
+            color: rgb(16, 22, 104);
+        }
+        h2{
+            color: rgb(3, 0, 0);
+            font: normal 18pt Arial;
+        }
+</style>
+</head>
+<body>
+    <h1>Exercício 11</h1>
+    <h2 class="k1">Nome:Pablo Camelo de Andrade<br>
+    Turma: OADSNM1AC</h2> 
+    <br>
+    <label for="PrecoDeCusto">Preço de Custo:</label>
+    <input type="number" id="PrecoDeCusto" step="0.01">
+    
+    <br>
+
+    <label for="PercentualDoAcrescimo">Percentual Do Acréscimo:</label>
+    <input type="number" id="PercentualDoAcrescimo">
+
+    <br>
+
+    <button onclick="calcularPrecoDaVenda()">Calcular</button>
+    
+    <p id="resultado"></p>
+    
+    <script>
+    function calcularPrecoDaVenda() {
+      var PrecoDeCusto = parseFloat(document.getElementById("PrecoDeCusto").value);
+      var PercentualDoAcrescimo = parseFloat(document.getElementById("PercentualDoAcrescimo").value);
+    
+      var PrecoDaVenda = PrecoDeCusto * (1 + PercentualDoAcrescimo/100);
+    
+      document.getElementById("resultado").innerHTML= `O preço da venda foi de R$ ${PrecoDaVenda}. `;
+    }
+    </script>
+</body>
+</html>

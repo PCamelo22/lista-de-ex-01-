@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 5</title>
+<style>
+    body {
+        background-color: rgb(194, 188, 188);
+        color: azure;
+        font: normal 20pt Arial;
+        }
+        h1{
+            color: rgb(16, 22, 104);
+        }
+        h2{
+            color: rgb(3, 0, 0);
+            font: normal 18pt Arial;
+        }
+</style>
+</head>
+<body>
+    <h1>Exercício 5</h1>
+    <h2 class="k1">Nome:Pablo Camelo de Andrade<br>
+    Turma: OADSNM1AC</h2> 
+    <br>
+    <label for="NomeAluno">Nome do aluno:</label>
+        <input type="text" id="NomeAluno">
+        
+        <br>
+    
+        <label for="nota1">Nota 1:</label>
+        <input type="number" id="nota1">
+        
+        <br>
+    
+        <label for="nota2">Nota 2:</label>
+        <input type="number" id="nota2">
+        
+        <br>
+    
+        <label for="nota3">Nota 3:</label>
+        <input type="number" id="nota3">
+        
+        <br>
+    
+        <button onclick="calcularMedia()">Calcular Média Final</button>
+
+        <br>
+    
+        <p id="resultado"></p>
+    
+        <script>
+            function calcularMedia() {
+
+                var NomeAluno = document.getElementById("NomeAluno").value;
+                var nota1 = parseFloat(document.getElementById("nota1").value);
+                var nota2 = parseFloat(document.getElementById("nota2").value);
+                var nota3 = parseFloat(document.getElementById("nota3").value);
+    
+                var media = (nota1 + nota2 + nota3) / 3;
+    
+                var resultado = document.getElementById("resultado");
+                resultado.innerHTML = "O aluno " + NomeAluno + " e teve sua média de: " + media.toFixed(2) ;
+            }
+    </script>
+</body>
+</html>
